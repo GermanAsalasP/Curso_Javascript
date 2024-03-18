@@ -41,18 +41,20 @@ function actualizarInventario(cantInventario, tipoAccion, tipoObjeto){
     switch(tipoObjeto){
         case "PELICULA":       
             if(tipoAccion === "INSERTAR"){
-                console.log(cantInventario)
                 inventario.cantidadPeliculas++;
+                alert("INSERTADO")
             }else if(tipoAccion === "ELIMINAR"){
                 inventario.cantidadPeliculas--;
+                alert("ELIMINADO")
             }            
             break;
         case "CATEGORIA":
             if(tipoAccion === "INSERTAR"){
-                console.log(cantInventario)
                 inventario.cantidadCategorias++;
+                alert("INSERTADO")
             }else if(tipoAccion === "ELIMINAR"){
                 inventario.cantidadCategorias--;
+                alert("ELIMINADO")
             }            
             break;
         default:
