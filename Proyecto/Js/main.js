@@ -26,13 +26,21 @@ function Inventario(cantidadPeliculas, cantidadCategorias, cantidadDirectores, c
 // Recoger información del usuario
 function validarUsuario(datoaValidar){
     while(datoaValidar === "" || datoaValidar == null){
-        datoaValidar = prompt("Ingresa tu nombre de usuario");
+        datoaValidar = datoaValidar.getElementByID("usuario");
         if (datoaValidar === "" || datoaValidar == null){
             alert("Ingresa un nombre de usuario valido"); 
         } else{
             alert("Bienvenido " + datoaValidar)
             return datoaValidar
         }
+    }
+}
+
+function capturarLogin(usuario, contrasena){
+    usuario = getElementByID("usuario");
+    contrasena = getElementByID("contrasena");
+    while(usuario==="" || usuario == null){
+        
     }
 }
 
