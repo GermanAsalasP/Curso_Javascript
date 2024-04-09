@@ -6,31 +6,88 @@
     <title>Document</title>
     <link rel="stylesheet" href="Css/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <div class="background">
         <div class="container text-center">
             <div class="row">
                 <div class="col">
-                    <h1>Repositorio de peliculas</h1>
-                    <form>
+                    <h1 class="tituloPrincipal">Repositorio de peliculas</h1>
+                    <form class="formulario">
                         <div class="form-group">
-                          <label for="exampleInputEmail1">Usuario</label>
-                          <input type="text" class="form-control" id="usuario" aria-describedby="emailHelp" placeholder="Ingresa tu usuario">
-                          <br>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="Nombre">Nombre</label>
+                                    <input type="text" class="form-control" id="Nombre" placeholder="Ingresa el nombre" required>
+                                    <br>
+                                </div>                            
+                                <div class="col-md-3">
+                                    <label for="Categoria">Categoria</label>
+                                    <select class="form-select" id="Categoria" aria-label="" required>
+                                        <option value="">Categoría</option>
+                                        <option value="Suspense">Suspense</option>
+                                        <option value="Action">Action</option>
+                                        <option value="Documental">Documental</option>
+                                        <option value="Musical">Musical</option>
+                                        <option value="Sci-fi">Sci-fi</option>
+                                    </select>
+                                    <br>
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="year">Año</label>
+                                    <input type="text" class="form-control" id="year" placeholder="año" required>
+                                    <br>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="Director">Director</label>
+                                    <input type="text" class="form-control" id="Director" placeholder="Director" required>
+                                    <br>
+                                </div> 
+                                <div class="col-md-4">
+                                    <label for="Imagen">Url de la Imagen</label>
+                                    <input type="text" class="form-control" id="Imagen" placeholder="Url de la Imagen" required>
+                                    <br>
+                                </div>
+                                
+                                <div class="col-md-12">
+                                    <label for="Ubicacion">Ubicación</label>
+                                    <input type="text" class="form-control" id="Ubicacion" placeholder="Ubicación" required>
+                                    <br>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group">
-                          <label for="exampleInputPassword1">Contraseña</label>
-                          <input type="password" class="form-control" id="contraseña" placeholder="Ingresa tu contraseña">
-                        </div>
+                        
                         <br>
                         <p id="mensaje" style="display: none;">Los datos no son correctos</p>
-                        <button type="submit" class="btn btn-primary" id="Enviar">Continuar</button>
+                        <button type="submit" class="btn btn-primary" id="Enviar">Guardar</button>
+                    </form>
+                </div>           
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-8">
+                    <h1 class="tituloSecundario">Explorar</h1>
+                </div>
+                <div class="col-md-4" style="padding: 80px 0px 20px;">
+                    <form class="row row-cols-lg-auto g-3 align-items-center">
+                        <div class="col-12">                          
+                          <div class="input-group">                            
+                            <input type="text" class="form-control" id="buscar" placeholder="buscar">
+                          </div>
+                        </div>
+                        <div class="col-6">
+                          <button type="submit" class="btn btn-primary buscador">buscar</button>
+                        </div>
                       </form>
                 </div>
                 
-
             </div>
+            <div class="row contenedorGeneral">
+                
         </div>
     </div>
     <script src="Js/main.js"></script>
