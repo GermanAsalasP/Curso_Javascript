@@ -15,7 +15,7 @@ function Peliculas(nombre, year, director, categoria, imagen, ubicacion){
     this.ubicacion = ubicacion;
 }
 
-//Array
+//Array asdasd
 const peliculas =[
     {
         nombre:"XD",
