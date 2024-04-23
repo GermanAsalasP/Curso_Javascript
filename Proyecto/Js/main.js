@@ -57,7 +57,7 @@ function capturarLogin(usuario, contrasena){
 }
 
 //Menú
-/*function actualizarInventario(cantInventario, tipoAccion, tipoObjeto){ 
+function actualizarInventario(cantInventario, tipoAccion, tipoObjeto){ 
     switch(tipoObjeto){
         case "PELICULA":       
             if(tipoAccion === "INSERTAR"){
@@ -80,7 +80,7 @@ function capturarLogin(usuario, contrasena){
         default:
             console.log("No válido")
     }  
-}*/
+}
 
 
 
@@ -167,6 +167,7 @@ function buscarPelicula(){
 //!Ejecutar
 //Previsualizacion
 vistaPrevia();
+
 guardarPelicula("Enviar");
 
 
