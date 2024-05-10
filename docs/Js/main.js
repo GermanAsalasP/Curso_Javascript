@@ -38,33 +38,31 @@ function mostrarPeliculas() {
 
 //! Sin tiempo para morir precargada
 // esto es Solo para mostrar como se ve una pelicula
-let sinTiempoParaMorir = {
-    "nombre": "Sin tiempo para morir",
-    "categoria": "Acción",
-    "year": "2021",
-    "director": "Cary Joji Fukunaga",
-    "imagen": "https://m.media-amazon.com/images/S/pv-target-images/5c46170901de1b7644ee440f1787cf0fbadcac369e93d2598d1f43069c471042.jpg",
-    "ubicacion": "/misPeliculas/sintiempoparamorir.brip"
-};
+fetch('peliculas.json')
+    .then(response => response.json())
+    .then(data => {
+        let peliculas = localStorage.getItem('peliculas');
+        if (!peliculas) {
+            peliculas = [];
+        } else {
+            peliculas = JSON.parse(peliculas);
+        }
 
-let peliculas = localStorage.getItem('peliculas');
-if (!peliculas) {
-    peliculas = [];
-} else {
-    peliculas = JSON.parse(peliculas);
-}
+        // Verificar si cada película del archivo JSON ya está en localStorage
+        data.forEach(pelicula => {
+            let presente = peliculas.some(p => p.nombre === pelicula.nombre);
+            if (!presente) {
+                peliculas.push(pelicula);
+            }
+        }); 
 
-//! Verificaciones convertir en función para todas
-let sinTiempoParaMorirPresente = peliculas.some(function(pelicula) {
-    return pelicula.nombre === sinTiempoParaMorir.nombre;
-});
+        // Guardar las películas actualizadas en localStorage
+        localStorage.setItem('peliculas', JSON.stringify(peliculas));
 
-if (!sinTiempoParaMorirPresente) {
-    peliculas.push(sinTiempoParaMorir);
-    localStorage.setItem('peliculas', JSON.stringify(peliculas));
-}
-
-mostrarPeliculas();
+        // Mostrar las películas
+        mostrarPeliculas();
+    })
+    .catch(error => console.error('Error al cargar las películas:', error));
 
 // Listener formulario
 document.querySelector('.formulario').addEventListener('submit', function(event) {

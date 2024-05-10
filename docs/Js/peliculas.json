@@ -1,0 +1,19 @@
+[
+    {
+        "nombre": "Sin tiempo para morir",
+        "categoria": "Acción",
+        "year": "2021",
+        "director": "Cary Joji Fukunaga",
+        "imagen": "https://m.media-amazon.com/images/S/pv-target-images/5c46170901de1b7644ee440f1787cf0fbadcac369e93d2598d1f43069c471042.jpg",
+        "ubicacion": "/misPeliculas/sintiempoparamorir.brip"
+    },
+    {
+        "nombre": "Blade Runner 2049",
+        "categoria": "Sci-fi",
+        "year": "2017",
+        "director": "Denis Villanueve",
+        "imagen": "https://es.web.img3.acsta.net/pictures/17/10/03/08/45/4260918.jpg",
+        "ubicacion": "/misPeliculas/bladrrn2049.brip"
+    }
+
+]
