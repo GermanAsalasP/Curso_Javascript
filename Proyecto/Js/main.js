@@ -1,7 +1,7 @@
 // Función  mostrar  películas
 function mostrarPeliculas() {
     let contenedorGeneral = document.querySelector('.contenedorGeneral');
-    contenedorGeneral.innerHTML = ''; // Limpiar el contenido anterior
+    contenedorGeneral.innerHTML = ''; 
 
     // Recuperar películas
     let peliculas = localStorage.getItem('peliculas');
@@ -37,6 +37,7 @@ function mostrarPeliculas() {
 }
 
 //! Sin tiempo para morir precargada
+// esto es Solo para mostrar como se ve una pelicula
 let sinTiempoParaMorir = {
     "nombre": "Sin tiempo para morir",
     "categoria": "Acción",
@@ -67,7 +68,7 @@ mostrarPeliculas();
 
 // Listener formulario
 document.querySelector('.formulario').addEventListener('submit', function(event) {
-    event.preventDefault(); // Evitar que se envíe el formulario
+    event.preventDefault(); 
 
     let nombre = document.getElementById('Nombre').value;
     let categoria = document.getElementById('Categoria').value;
@@ -170,7 +171,7 @@ function buscarPeliculas(termino) {
 
 // lis  TENER buscador
 document.getElementById('formularioBusqueda').addEventListener('submit', function(event) {
-    event.preventDefault(); // Evitar que se envíe el formulario
+    event.preventDefault(); 
 
     let terminoBusqueda = document.getElementById('buscar').value.trim();
     if (terminoBusqueda !== '') {
