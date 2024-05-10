@@ -36,9 +36,8 @@ function mostrarPeliculas() {
     }
 }
 
-//! Sin tiempo para morir precargada
-// esto es Solo para mostrar como se ve una pelicula
-fetch('peliculas.json')
+//! Peliculas precargadas
+fetch('https://raw.githubusercontent.com/GermanAsalasP/Curso_Javascript/main/docs/Js/peliculas.json')
     .then(response => response.json())
     .then(data => {
         let peliculas = localStorage.getItem('peliculas');
@@ -48,7 +47,7 @@ fetch('peliculas.json')
             peliculas = JSON.parse(peliculas);
         }
 
-        // Verificar si cada película del archivo JSON ya está en localStorage
+        // VERIFICACIÓN
         data.forEach(pelicula => {
             let presente = peliculas.some(p => p.nombre === pelicula.nombre);
             if (!presente) {
@@ -56,12 +55,12 @@ fetch('peliculas.json')
             }
         }); 
 
-        // Guardar las películas actualizadas en localStorage
+        //lOCAL
         localStorage.setItem('peliculas', JSON.stringify(peliculas));
 
-        // Mostrar las películas
         mostrarPeliculas();
     })
+    //POR SI NO CARGA
     .catch(error => console.error('Error al cargar las películas:', error));
 
 // Listener formulario
