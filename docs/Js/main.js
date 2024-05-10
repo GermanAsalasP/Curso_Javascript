@@ -150,11 +150,22 @@ function buscarPeliculas(termino) {
         return pelicula.nombre.toLowerCase().includes(termino.toLowerCase());
     });
 
+    if (resultados.length === 0) {
+        Swal.fire({
+            icon: 'error',
+            title: '¡Error!',
+            text: 'Pelicula no encontrada',
+            confirmButtonText: 'Continuar'
+        });
+        return;
+    }
+
     resultados.forEach(function(pelicula) {
         let cardHTML = `
-            <div class="col-md-4">
-                <div class="card mb-3">
-                    <img src="${pelicula.imagen}" class="card-img-top" alt="...">
+            <div class="col-md-4" style="margin-bottom:50px;">
+            <h3 class="tituloSecundario" style="margin-bottom:20px;">Resultado de la búsqueda</h3>
+                <div class="card mb-3" >
+                    <img src="${pelicula.imagen}" class="card-img-top" alt="">
                     <div class="card-body">
                         <h5 class="card-title">${pelicula.nombre}</h5>
                         <p class="card-text">${pelicula.ubicacion}</p>
