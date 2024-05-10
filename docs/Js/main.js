@@ -11,13 +11,14 @@ function mostrarPeliculas() {
         // HTML
         peliculas.forEach(function(pelicula, index) {
             let cardHTML = `
-                <div class="card mb-3 contenedorPeliculas col-md-5">
-                    <div class="row g-0">
-                        <div class="col-md-4 contenedorImagen">
-                            <img src="${pelicula.imagen}" class="img-fluid rounded-start" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
+                <div class="card contenedorPeliculas col-md-5 col-sm-12">
+                <div class="row">
+                    <div class="col-md-5 col-sm-12" style="background-image:url('${pelicula.imagen}');background-repeat: no-repeat;
+                    background-size: cover; height:320px;"> 
+                        <span style="height:320px; max-width:300px;"></span>
+                    </div>                        
+                        <div class="col-md-7 col-sm-12">
+                            <div class="card-body col-md-12">
                                 <h5 class="card-title tituloPelicula">${pelicula.nombre}</h5>
                                 <hr>
                                 <h6 class="card-text categoria">${pelicula.categoria}</h6>
@@ -28,7 +29,7 @@ function mostrarPeliculas() {
                                 <button class="btn btn-danger eliminarPelicula" data-index="${index}">Eliminar</button>
                             </div>
                         </div>
-                    </div>
+                </div>
                 </div>
             `;
             contenedorGeneral.innerHTML += cardHTML;

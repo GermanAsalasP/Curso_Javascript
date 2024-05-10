@@ -50,10 +50,13 @@ label {
 
 .card{
     text-align: left;
+    width: 18rem;
 }
 
-.contenedorImagen{
-    padding: 10px;
+.contenedorGeneral{
+    justify-content: space-around;
+    justify-items: stretch;
+    gap: 10px;
 }
 
 .contenedorPeliculas h5{
@@ -66,6 +69,8 @@ label {
 .contenedorPeliculas {
     color: #221f27 !important;
     font-family: "Poppins", sans-serif !important;
-    font-weight: 400;
-    margin: 10px;
+    font-weight: 400;   
+}
+.card-img-top{
+    max-width: 100px;
 }
