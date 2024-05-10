@@ -123,16 +123,24 @@ function eliminarPelicula(index) {
     let peliculas = localStorage.getItem('peliculas');
     if (peliculas) {
         peliculas = JSON.parse(peliculas);
-        peliculas.splice(index, 1); // Eliminar la película del array
-        localStorage.setItem('peliculas', JSON.stringify(peliculas)); // Guardar el array actualizado en local storage
-        mostrarPeliculas(); // Mostrar las películas actualizadas
+        peliculas.splice(index, 1); 
+        localStorage.setItem('peliculas', JSON.stringify(peliculas)); 
+        mostrarPeliculas(); 
+
+        Swal.fire({
+            icon: 'success',
+            title: 'Eliminada',
+            text: 'Película eliminada correctamente.',
+            showConfirmButton: false,
+            timer: 1500 
+        });
     }
 }
 
 // BUSCADOR
 function buscarPeliculas(termino) {
     let contenedorResultados = document.getElementById('resultadosBusqueda');
-    contenedorResultados.innerHTML = ''; // Limpiar los resultados anteriores
+    contenedorResultados.innerHTML = ''; 
 
     let peliculas = localStorage.getItem('peliculas');
     if (!peliculas) {
